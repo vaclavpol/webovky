@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Podrobný článek o první jízdě na Jawě 250.">
+  <meta name="author" content="Tvé jméno">
+  <title>Jak jsem přišel ke Kývačce</title>
+  
+  <link rel="stylesheet" href="../style.css"> <!-- Odkaz na externí CSS soubor -->
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Domů</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="clanek">
+    <h2>Parametry</h2>
+    <p>Max. výkon RMS: 25W<br>
+        Vstupní napětí trafa: 100V<br>
+        Vstupní impedance trafa pro zvukové pásmo: cca 400Ohm<br>
+        Vstupní proud RMS: 0,25A<br></p>      
+    </section>
+
+    <section>
+    <h2>Princip funkce (trocha elektroakustiky...)</h2>
+    <p>Amplion funguje na principu tlakového reproduktoru, který spočívá v tom, že zvuk vyzařuje nepřímo. Samotný vyzařovač
+        se
+        skládá z silného permanentního magnetu, elektromagnetu a kovové mebrány. Na něj navazuje rozšiřující se plechový
+        kužel. Zvuk, který
+        z něj vychází je reflektován opačným směrem díky druhému, opačně orientovanému plechovému kuželu. Třetí a poslední
+        odraz zvuku se děje už
+        v plastové kastli, která dál zvuk šíří do okolí. Tímto principem se dá doshánout dost vysoké hlasitosti při poměrně
+        nízkém výkonu, ale hlavní
+        nevýhodou je dost úzke zvukové frekvenční pásmo. Tlampač je od výroby převážně určen pro mluvené slovo, a proto
+        výšky a hloubky vyzařuje s určitým
+        slyšitelným zkreslením. Tlampač je konstrukčně přizpůsoben pro montáž v horizontální poloze a nasměrování lehce
+        směrem k zemi, tím docílíme
+        nejlepšího pokrytí prostoru určeného pro ozvučení.</p>
+    
+    <figure>
+        <img src="obrazky/ARS453/trafo1.jpg" alt="trafo1" width="25%">
+        <img src="obrazky/ARS453/tlampac.jpg" alt="trafo1" width="25%">
+        <figcaption>Tlampač zvenku a jeho trafo</figcaption>
+    </figure></img>
+    
+
+    
+    </section>
+    
+    <h2>Zapojení v domacích podmínkách</h2>
+    <p>Tlampač nelze přímo propojit s běžným NF zesilovačem, protože jeho vstupní impedance je mnohem vyšší než běžného
+        reproduktoru. Samotný odpor vinutí trafa změřený
+        multimetrem se sice pohybuje v jednotkách ohmů, ale reaktance vinutí je poměrně vysoká a při přivedení NF audio
+        signálu se velmi projeví. Jedna možnost je
+        přemostit vynechat trafo v těle tlampače a propojit ho přímo s výstupem NF zesilovače. Tím se ale připrávíte o
+        originální zapojení pro 100V soustavu a
+        na delší vzdálenosti je výhodné ji použít. Stačí k tomu jedno stejné trafo, jako se nachází v tlampači, akorát bude
+        zapojeno obráceně (viz obrázek).</p>
+    
+    <figure>
+        <img src="obrazky/ARS453/100V.png" alt="100V" width="50%">
+        <figcaption>100V rozhlas</figcaption>
+    </figure>
+    
+    <h2>Změna výkonu</h2>
+    <p>Výkon amplionu lze změnit přepojením odboček vinutí trafa, které se nachází pod plastovou kastlí.
+        Pro sundání kastle je nutné vyšroubovat všechny šrouby, které jsou na vnější straně.
+        Uvolní se tím celý vnitřek a jediné, co brání od vyjmutí je přívod, kterým jsou 2 ze 4 celkových vodičů.
+        Ty stačí odpojit ze svorkovnice, vytáhnout a místo nich zapojit odbočky z trafa pro požadovaný
+        výkon. </p>
+    <p>Kombinace jsou následující<br>
+        <b>černá-hnědá-25w<br>
+            žlutá-bílá-15w<br>
+            černá-bílá-10w (výchozí zapojení pro nadráží)<br>
+        </b>
+    </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Tvůj web. Všechna práva vyhrazena.</p>
+  </footer>
+</body>
+</html>
