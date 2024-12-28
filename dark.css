@@ -87,9 +87,20 @@ footer p {
   margin: 0;
 }
 
-.center{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+/* Přepínač motivu */
+button#theme-toggle {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #d32f2f; /* Jawa červená */
+  color: #fff; /* Bílý text */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button#theme-toggle:hover {
+  background-color: #800000; /* Tmavší červená při najetí */
 }
