@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Podrobný článek o první jízdě na Jawě 250.">
-  <meta name="author" content="Tvé jméno">
-  <title>Jak jsem přišel ke Kývačce</title>
-  
-  <link rel="stylesheet" href="../style.css"> <!-- Odkaz na externí CSS soubor -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osobní blog</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Domů</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>Můj technický blog</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Domů</a></li>
+                <li><a href="../clanky.html">Články</a></li>
+                <li><a href="../info.html">O mně</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">Přepnout režim</button>
+    </header>
 
   <main>
-    <section id="clanek">
     <h2>Parametry</h2>
     <p>Max. výkon RMS: 25W<br>
         Vstupní napětí trafa: 100V<br>
@@ -48,8 +46,8 @@
     <figure>
 	
 	<div style="display: flex; justify-content: center; gap: 40px">
-		<img src="obrazky/ARS453/trafo1.jpg" alt="trafo1" style="width: 50%; height: auto;">
-		<img src="obrazky/ARS453/tlampac.jpg" alt="trafo1" width="25%">
+		<img src="obrazky/ARS453/trafo1.jpg" alt="trafo1" style="width: 20%; height: auto;">
+		<img src="obrazky/ARS453/tlampac.jpg" alt="trafo1" style="width: 25%; height: auto;">
 	</div>
 	
 	<center>
@@ -74,7 +72,11 @@
         zapojeno obráceně (viz obrázek).</p>
     
     <figure>
+	
+	<div style="display: flex; justify-content: center; gap: 40px">
         <img src="obrazky/ARS453/100V.png" alt="100V" width="50%">
+	</div>
+	
         <figcaption>100V rozhlas</figcaption>
     </figure>
     
@@ -93,8 +95,11 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2024 Tvůj web. Všechna práva vyhrazena.</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 Můj blog</p>
+    </footer>
+    
+<script src="script.js"></script>
+
 </body>
 </html>

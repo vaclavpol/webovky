@@ -1,0 +1,60 @@
+/* Výchozí tmavý režim */
+body {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+button {
+    background: #ffcc00;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Světlý režim */
+.light-mode {
+    background-color: #ffffff;
+    color: #111;
+}
+
+.light-mode header {
+    background-color: #e0e0e0;
+}
+
+.light-mode nav ul li a {
+    color: #d2691e;
+}
+
+.light-mode button {
+    background: #d2691e;
+    color: #ffffff;
+}

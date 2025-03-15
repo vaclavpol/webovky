@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="CP1250">
+	<link rel="stylesheet" href="../../sab_projekty.css">
+	<link rel="icon" type="image/x-icon" href="../../uvodni_stranka/favicon.ico">
+	<title>TDA 2030</title>
+</head>
+<body>
+
+<div style="border: groove rgb(52, 152, 219) 5px; background-color: rgb(52, 152, 219);">
+
+<header>
+<h1>Zesilovač s obvodem TDA 2030</h1>
+</header>
+
+	<div style="border: groove rgb(52, 152, 219) 5px; font-family: 'HP Simplified'; background-color: rgb(251, 238, 230); text-align:center;">
+			<div style="float: left; margin-left: 4%;">
+		<p><u>
+		Datum: 18.11.2023
+		</u></p>
+		</div>
+		<div style="float: right; margin-right: 4%">
+				<p><u>
+				Autor článku: Vašek
+				</u></p>
+				</div>
+		<p><a href="https://www.kgx-5.cz">Zpět na hlavní stranu</a></p>
+	</div>
+	
+	
+		<div style="font-family: 'HP Simplified'; border: groove rgb(251, 238, 230) 5px; margin-left: auto; font-size: 25px; text-align: center; background-color: rgb(251, 238, 230);">
+			<div style="margin-left: 2%; margin-top: 5%;">
+				<h3>Zdroj:</h3>
+				<p>Základ pro každý audio zesilovač je správně navržený zdroj. Nejlepších výsledků dosáhneme použitím
+				symeterického zdroje, což znamená, že napětí mezi referenčím bodem (bod pro nás s nulovým potenciálem) a
+				výstupy zdroje bude na jednom výstupu kladné a na druhém záporné. Docílíme toho zapojením odbočky transformátoru
+				jako referenčního bodu. Pokud bude poměr vinutí, které odbočka rozděluje přesně 1:1, získáme na obou výstupech
+				stejné napětí, akorát s opačnou polaritou. Toto se nazývá symetrické napájení. Pro čip TDA2030 je naximální napětí 36V, takže
+				symetricky +-18V.<br><br>
+				
+				Dále je třeba napětí usměrnit, filtrovat a případně stabilizovat. Na usměrnění se nepoužívá nic jiného, než 
+				obyčejný můstkový usměrňovač sestávající se ze 4 diod. Pro filtraci je použita dvojice elektrolytických kondenzátorů, kde 
+				je jeden zapojen z kladného výstupu můstku na referenční zem a druhý ze záporného výstupu můstku na referenční zem.
+				</p>
+				
+				<img src="obrazky/TDA/zdroj.png" alt="tda" style="width:35%;">
+				
+				<h3>Samotný čip zesilovače</h3>
+				<p>Integrovaný obvod TDA 2030 je ve své podstatě výkonový operační zesilovač. Oproti většině integrovaných obvodů je
+				však vyráběn v pouzdře "PENTAWATT", proto je na první pohled zaměnitelný s jakoukoliv podobnou výkonovou součástkou v pozdře
+				TO-220. Má 5 vývodů - neinvertující vstup (1), invertující vstup (2), záporné napájení / zem (3), výstup (4) a kladné napájení (5)</p>
+				
+				<h3>Princip zesilovače</h3>
+				<p>Zesilovač pracuje v režimu neinvertujícího zesilovače, tudíž vstupní signál je zapojen na neinvertující vstup a výstupní signál
+				je ve fázi se vstupním. Zpětná vazba je zajištěna odpory R1 a R2, které pracují jako odporový dělič připojený na invertující vstup.
+				Zesílení je dáno převráceným vztahem pro odporový dělič bez ohledu na napětí <b>Au = (R1 + R2) / R2.</b> Podle katalogového zapojení 
+				Au = (22k + 680) / 680 = 33,35dB. Kondenzátor C2 zajištujě střídavou vazbu se zemí a jeho reaktance nesmí být při nízké frekvenci
+				příliš vysoká, aby neovlivňoval zpětnou vazbu (způsoboval by menší zesílení).<br>
+				Kondenzátor C1 propouští do vstupu jen střídavou složku 
+				a odpor R3 slouží jako impedance vstupu. Není nutný, ale zárověn utlumí i rušení, které se může "nachytat" na vedení. Sériový RC článek
+				tvořený odporem R4 a kondenzátorem C7 ("Snubber") tlumí kmity, které způsobuje pohyb reproduktorové membrány a zabraňuje tak poškození čipu 
+				zesilovače. Kondenzátory C3 a C4 je dobré umístitit co nejblíže k čipu, jinak hrozí nestabilní napájení a rozkmitání zesilovače! 
+				Kondenzátory C5 a C6 můžou být umístěny kdekoliv na desce a slouží pro vyhlazení signálu (pokud jsou už sočástí zdroje, nejsou nezbytné).<br>
+				Jako poslední jsou ve schématu diody, které slouží jako ochrana výstupu. Při přivedení signálu na výstup s odpojeným napájením zesilovače
+				svedou signál do napájecích větví namísto do vstupu, který je bez napájení zkratovaný.</p>
+				
+				<img src="obrazky/TDA/tda.png" alt="tda" style="width:35%;">
+				
+				
+				<br>
+				
+				<h3 style="color: red; text-align: center">Veškeré konstrukce uvedené na tomto webu jsou poskytovány bez záruky funkčnosti a mají pouze<br>
+				informativní charakter, nejedná se o návod. Autoři neručí za případné újmy způsobené<br>
+				v důsledku konstrukce, či užívání jakýchkoli zařízení uvedených na těchto stránkách.</h3>
+				
+		</div>
+</div>	
+</div>
+</body>
+</html>
