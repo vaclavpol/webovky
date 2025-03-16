@@ -4,7 +4,7 @@ body {
     color: #e0e0e0;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -14,12 +14,12 @@ header {
     text-align: center;
 }
 
-nav ul {
+nav ul {	/*zarovnání na střed*/
     list-style: none;
     padding: 0;
 }
 
-nav ul li {
+nav ul li {		/*zarovnání vedle sebe*/
     display: inline;
     margin: 0 15px;
 }
@@ -28,6 +28,11 @@ nav ul li a {
     color: #ffcc00;
     text-decoration: none;
     font-weight: bold;
+}
+
+ul li a {
+    color: #ff6600;
+    text-decoration: none;
 }
 
 button {
@@ -39,6 +44,17 @@ button {
     margin-top: 10px;
     font-weight: bold;
 }
+
+p, h1, h2{
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+figure {
+  padding: 0px;
+  justify-content: center;
+}
+
 
 /* Světlý režim */
 .light-mode {
