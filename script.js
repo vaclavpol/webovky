@@ -1,29 +1,22 @@
-// Funkce pro aplikaci motivu na tělo stránky
-function applyTheme() {
-    const currentTheme = localStorage.getItem("theme");
-
-    if (currentTheme) {
-        document.body.classList.add(currentTheme); // Použije motiv podle uloženého nastavení
-    } else {
-        document.body.classList.add("dark-mode"); // Výchozí režim, pokud není motiv nastaven
-    }
-}
-
-// Při načtení stránky nastav motiv
 document.addEventListener("DOMContentLoaded", () => {
-    applyTheme();
-});
+    const themeToggle = document.getElementById("theme-toggle");
+    const savedTheme = localStorage.getItem("theme");
 
-// Přepínání motivu při kliknutí na tlačítko
-const themeToggle = document.getElementById("theme-toggle");
-if (themeToggle) {
+    if (savedTheme) {
+        document.body.classList.add(savedTheme);
+    } else {
+        document.body.classList.add("dark-mode"); // Výchozí režim
+    }
+
     themeToggle.addEventListener("click", () => {
-        // Přepnutí mezi motivy
-        document.body.classList.toggle("dark-mode");
-        document.body.classList.toggle("light-mode");
+        const isDarkMode = document.body.classList.contains("dark-mode");
 
-        // Uložení nového motivu do localStorage
-        const newTheme = document.body.classList.contains("dark-mode") ? "dark-mode" : "light-mode";
-        localStorage.setItem("theme", newTheme); // Uložení preferovaného motivu
+        if (isDarkMode) {
+            document.body.classList.replace("dark-mode", "light-mode");
+            localStorage.setItem("theme", "light-mode");
+        } else {
+            document.body.classList.replace("light-mode", "dark-mode");
+            localStorage.setItem("theme", "dark-mode");
+        }
     });
-}
+});
