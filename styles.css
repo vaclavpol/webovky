@@ -74,3 +74,24 @@ figure {
     background: #d2691e;
     color: #ffffff;
 }
+
+table{
+  margin-left: 40px;
+  color: black;
+  text-align: center;
+  
+}
+
+th, td {
+  border-style:solid;
+  border-color: #96D4D4;
+  background-color: #ffcc00;
+  margin-left: 40px;
+}
+
+figure {
+  display: flex; 
+  justify-content: center;
+  gap: 40px
+}
+
