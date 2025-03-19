@@ -1,82 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="cs">
 
 <head>
-	<meta charset="CP1250">
-	<link rel="stylesheet" href="../../sab_projekty.css">
-	<link rel="icon" type="image/x-icon" href="../../uvodni_stranka/favicon.ico">
-	<title>TDA 2030</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Zesilovač s TDA2030</title>
+	<link rel="stylesheet" href="../styles.css">
 </head>
+
 <body>
-
-<div style="border: groove rgb(52, 152, 219) 5px; background-color: rgb(52, 152, 219);">
-
-<header>
-<h1>Zesilova� s obvodem TDA 2030</h1>
-</header>
-
-	<div style="border: groove rgb(52, 152, 219) 5px; font-family: 'HP Simplified'; background-color: rgb(251, 238, 230); text-align:center;">
-			<div style="float: left; margin-left: 4%;">
-		<p><u>
-		Datum: 18.11.2023
-		</u></p>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="../index.html">Domů</a></li>
+				<li><a href="../clanky.html">Články</a></li>
+				<li><a href="../info.html">O mně</a></li>
+			</ul>
+		</nav>
+		<button id="theme-toggle">Přepnout motiv</button>
+	</header>
+	<main>
+		<h1>Zesilovač s TDA2030</h1>
+		<h2>Zdroj</h2>
+		<p>Základ pro každý audio zesilovač je správně navržený zdroj. Nejlepších výsledků dosáhneme použitím
+			symeterického zdroje, což znamená, že napětí mezi referenčím bodem (bod pro nás s nulovým potenciálem) a
+			výstupy zdroje bude na jednom výstupu kladné a na druhém záporné. Docílíme toho zapojením odbočky
+			transformátoru
+			jako referenčního bodu. Pokud bude poměr vinutí, které odbočka rozděluje přesně 1:1, získáme na obou
+			výstupech
+			stejné napětí, akorát s opačnou polaritou. Toto se nazývá symetrické napájení. Pro čip TDA2030 je naximální
+			napětí 36V, takže
+			symetricky +-18V.</p>
+		<p>
+			Dále je třeba napětí usměrnit, filtrovat a případně stabilizovat. Na usměrnění se nepoužívá nic jiného, než
+			obyčejný můstkový usměrňovač sestávající se ze 4 diod. Pro filtraci je použita dvojice elektrolytických
+			kondenzátorů, kde
+			je jeden zapojen z kladného výstupu můstku na referenční zem a druhý ze záporného výstupu můstku na
+			referenční zem.
+		</p>
+		<div class="gallery-row">
+			<img src="obrazky/TDA/zdroj.png" alt="tda" style="width:35%;">
 		</div>
-		<div style="float: right; margin-right: 4%">
-				<p><u>
-				Autor �l�nku: Va�ek
-				</u></p>
-				</div>
-		<p><a href="https://www.kgx-5.cz">Zp�t na hlavn� stranu</a></p>
-	</div>
-	
-	
-		<div style="font-family: 'HP Simplified'; border: groove rgb(251, 238, 230) 5px; margin-left: auto; font-size: 25px; text-align: center; background-color: rgb(251, 238, 230);">
-			<div style="margin-left: 2%; margin-top: 5%;">
-				<h3>Zdroj:</h3>
-				<p>Z�klad pro ka�d� audio zesilova� je spr�vn� navr�en� zdroj. Nejlep��ch v�sledk� dos�hneme pou�it�m
-				symeterick�ho zdroje, co� znamen�, �e nap�t� mezi referen��m bodem (bod pro n�s s nulov�m potenci�lem) a
-				v�stupy zdroje bude na jednom v�stupu kladn� a na druh�m z�porn�. Doc�l�me toho zapojen�m odbo�ky transform�toru
-				jako referen�n�ho bodu. Pokud bude pom�r vinut�, kter� odbo�ka rozd�luje p�esn� 1:1, z�sk�me na obou v�stupech
-				stejn� nap�t�, akor�t s opa�nou polaritou. Toto se naz�v� symetrick� nap�jen�. Pro �ip TDA2030 je naxim�ln� nap�t� 36V, tak�e
-				symetricky +-18V.<br><br>
-				
-				D�le je t�eba nap�t� usm�rnit, filtrovat a p��padn� stabilizovat. Na usm�rn�n� se nepou��v� nic jin�ho, ne� 
-				oby�ejn� m�stkov� usm�r�ova� sest�vaj�c� se ze 4 diod. Pro filtraci je pou�ita dvojice elektrolytick�ch kondenz�tor�, kde 
-				je jeden zapojen z kladn�ho v�stupu m�stku na referen�n� zem a druh� ze z�porn�ho v�stupu m�stku na referen�n� zem.
-				</p>
-				
-				<img src="obrazky/TDA/zdroj.png" alt="tda" style="width:35%;">
-				
-				<h3>Samotn� �ip zesilova�e</h3>
-				<p>Integrovan� obvod TDA 2030 je ve sv� podstat� v�konov� opera�n� zesilova�. Oproti v�t�in� integrovan�ch obvod� je
-				v�ak vyr�b�n v pouzd�e "PENTAWATT", proto je na prvn� pohled zam�niteln� s jakoukoliv podobnou v�konovou sou��stkou v pozd�e
-				TO-220. M� 5 v�vod� - neinvertuj�c� vstup (1), invertuj�c� vstup (2), z�porn� nap�jen� / zem (3), v�stup (4) a kladn� nap�jen� (5)</p>
-				
-				<h3>Princip zesilova�e</h3>
-				<p>Zesilova� pracuje v re�imu neinvertuj�c�ho zesilova�e, tud� vstupn� sign�l je zapojen na neinvertuj�c� vstup a v�stupn� sign�l
-				je ve f�zi se vstupn�m. Zp�tn� vazba je zaji�t�na odpory R1 a R2, kter� pracuj� jako odporov� d�li� p�ipojen� na invertuj�c� vstup.
-				Zes�len� je d�no p�evr�cen�m vztahem pro odporov� d�li� bez ohledu na nap�t� <b>Au = (R1 + R2) / R2.</b> Podle katalogov�ho zapojen� 
-				Au = (22k + 680) / 680 = 33,35dB. Kondenz�tor C2 zaji�tuj� st��davou vazbu se zem� a jeho reaktance nesm� b�t p�i n�zk� frekvenci
-				p��li� vysok�, aby neovliv�oval zp�tnou vazbu (zp�soboval by men�� zes�len�).<br>
-				Kondenz�tor C1 propou�t� do vstupu jen st��davou slo�ku 
-				a odpor R3 slou�� jako impedance vstupu. Nen� nutn�, ale z�rov�n utlum� i ru�en�, kter� se m��e "nachytat" na veden�. S�riov� RC �l�nek
-				tvo�en� odporem R4 a kondenz�torem C7 ("Snubber") tlum� kmity, kter� zp�sobuje pohyb reproduktorov� membr�ny a zabra�uje tak po�kozen� �ipu 
-				zesilova�e. Kondenz�tory C3 a C4 je dobr� um�stitit co nejbl�e k �ipu, jinak hroz� nestabiln� nap�jen� a rozkmit�n� zesilova�e! 
-				Kondenz�tory C5 a C6 m��ou b�t um�st�ny kdekoliv na desce a slou�� pro vyhlazen� sign�lu (pokud jsou u� so��st� zdroje, nejsou nezbytn�).<br>
-				Jako posledn� jsou ve sch�matu diody, kter� slou�� jako ochrana v�stupu. P�i p�iveden� sign�lu na v�stup s odpojen�m nap�jen�m zesilova�e
-				svedou sign�l do nap�jec�ch v�tv� nam�sto do vstupu, kter� je bez nap�jen� zkratovan�.</p>
-				
-				<img src="obrazky/TDA/tda.png" alt="tda" style="width:35%;">
-				
-				
-				<br>
-				
-				<h3 style="color: red; text-align: center">Ve�ker� konstrukce uveden� na tomto webu jsou poskytov�ny bez z�ruky funk�nosti a maj� pouze<br>
-				informativn� charakter, nejedn� se o n�vod. Auto�i neru�� za p��padn� �jmy zp�soben�<br>
-				v d�sledku konstrukce, �i u��v�n� jak�chkoli za��zen� uveden�ch na t�chto str�nk�ch.</h3>
-				
+		<p class="description">Schéma symetrického napájecího zdroje</p>
+
+		<h2>Samotný čip zesilovače</h2>
+		<p>Integrovaný obvod TDA 2030 je ve své podstatě výkonový operační zesilovač. Oproti většině integrovaných
+			obvodů je
+			však vyráběn v pouzdře "PENTAWATT", proto je na první pohled zaměnitelný s jakoukoliv podobnou výkonovou
+			součástkou v pozdře
+			TO-220. Má 5 vývodů - neinvertující vstup (1), invertující vstup (2), záporné napájení / zem (3), výstup (4)
+			a kladné napájení (5)</p>
+
+		<h2>Princip zesilovače</h2>
+		<p>Zesilovač pracuje v režimu neinvertujícího zesilovače, tudíž vstupní signál je zapojen na neinvertující vstup
+			a výstupní signál
+			je ve fázi se vstupním. Zpětná vazba je zajištěna odpory R1 a R2, které pracují jako odporový dělič
+			připojený na invertující vstup.
+			Zesílení je dáno převráceným vztahem pro odporový dělič bez ohledu na napětí <b>Au = (R1 + R2) / R2.</b>
+			Podle katalogového zapojení
+			Au = (22k + 680) / 680 = 33,35dB. Kondenzátor C2 zajištujě střídavou vazbu se zemí a jeho reaktance nesmí
+			být při nízké frekvenci
+			příliš vysoká, aby neovlivňoval zpětnou vazbu (způsoboval by menší zesílení).</p>
+		<p>
+			Kondenzátor C1 propouští do vstupu jen střídavou složku
+			a odpor R3 slouží jako impedance vstupu. Není nutný, ale zárověn utlumí i rušení, které se může "nachytat"
+			na vedení. Sériový RC článek
+			tvořený odporem R4 a kondenzátorem C7 ("Snubber") tlumí kmity, které způsobuje pohyb reproduktorové membrány
+			a zabraňuje tak poškození čipu
+			zesilovače. Kondenzátory C3 a C4 je dobré umístitit co nejblíže k čipu, jinak hrozí nestabilní napájení a
+			rozkmitání zesilovače!
+			Kondenzátory C5 a C6 můžou být umístěny kdekoliv na desce a slouží pro vyhlazení signálu (pokud jsou už
+			sočástí zdroje, nejsou nezbytné).</p>
+		<p>
+			Jako poslední jsou ve schématu diody, které slouží jako ochrana výstupu. Při přivedení signálu na výstup s
+			odpojeným napájením zesilovače
+			svedou signál do napájecích větví namísto do vstupu, který je bez napájení zkratovaný.</p>
+		<div class="gallery-row">
+			<img src="obrazky/TDA/tda.png" alt="tda" style="width:35%;">
 		</div>
-</div>	
-</div>
+		<p class="description">Katalogové schéma zapojení zesilvoače</p>
+	</main>
+	<footer>
+		<p>&copy; 2025 Václav Polák</p>
+	</footer>
+	<script src="../script.js"></script>
 </body>
 </html>
