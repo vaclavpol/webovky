@@ -59,7 +59,7 @@ figure {
 /* Světlý režim */
 .light-mode {
     background-color: #ffffff;
-    color: #111;
+    color: #000000;
 }
 
 .light-mode header {
@@ -89,9 +89,28 @@ th, td {
   margin-left: 40px;
 }
 
-figure {
-  display: flex; 
-  justify-content: center;
-  gap: 40px
+.gallery-row {
+    display: flex;
+    justify-content: center; /* Zarovná obrázky na střed */
+    flex-wrap: wrap; /* Aby se přizpůsobily velikosti obrazovky */
+    gap: 10px; /* Mezera mezi obrázky */
 }
 
+.gallery-row img {
+    max-width: 100%; /* Aby se přizpůsobily velikosti kontejneru */
+    height: auto;
+    object-fit: cover;
+    padding: 10px;
+}
+
+.description {
+    text-align: center;
+    margin: 10px; /* Odsazení nahoře a dole */
+}
+
+iframe {
+    width: 40%; /* 40 % šířky rodičovského prvku */
+    height: calc(40vw * 9 / 16); /* Dynamická výška dle šířky */
+    margin: auto;
+    display: block;
+}
