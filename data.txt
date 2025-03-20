@@ -1,0 +1,24 @@
+Na burze jsem jednou pořídil krásný stolní mikron s magnetodynamickou vložkou. Kdo mě zná tak ví, že mě fascinují ampliony a rozhlasová technika obecně, takže jsem s mikrofonem měl jasný záměr. Jenže takový mikrofon umí generovat jen velmi nízké napětí, které je pro většinu zesilovačů nedostačující. Musel jsem si tedy zhotovit předzesilovač.
+
+Princip
+
+Jedná se o dvoustupňový zesilovač. Zesilovacími prvky je dvojice NPN tranzistorů. Oba jsou zapojené v zapojení se společným emitorem (SE), které má tu vlastnost, že zesiluje převážně napětí. Tato konfigurace by byla kvůli extrémně velkému zesílení nestabilní, tudíž musí být zavedena záporná zpětná vazba. U prvního stupně k nastavení této zpětné vazby slouží emitorový odpor Re1. Re1 ovlivní i klidový pracovní bod tranzistoru T1, ale k jeho nastavení slouží převážně kolektorový odpor Rc1.
+
+U druhého stupně je to obdobně. Jediným rozdílem je, že k Re2 je paralelně připojen kondenzátor Ce. Takzvané zapojení s blokovaným emitorem. Ce pro střídavý signál vykazuje nízkou reaktanci a záporná zpětná vazba je tedy oslabena, tudíž zesílení je zvýšeno. Klidový pracovní bod tranzistoru T2 je pevně nastaven odpory Rc2 a Re2. Odpor Rc2 zároveň určuje výstupní odpor předzesilovače, takže není ideální ho volit moc velký.
+
+Poslední součástkou související se signálovou cestou je odpor Rf, který přivádí stejnosměrné napětí na bázi tranzistoru T1, protože malá vstupní amplituda z mikronu (jednotky až desítky mV) by na otevření tranzistoru, který potřebuje přibližně 0,6-0,7V, nestačila. Tento odpor zároveň funguje také jako záporná zpětná vazba. Poměrně důležitý poznatek, na který jsem při experimentování s tímto odporem narazil je, že ovlivňuje frekvenční závislost. Čím nižší je jeho hodnota, tím silnější je zpětná vazba, což znamená nižší zesílení. To dává smysl. Souvisí si tím ale blokovací kondenzátor Ce. Při nižších frekvencích má totiž Ce nižší reaktanci, tudíž je na paralelní kombinaci (Re2 II Ce) vyšší napětí, které je přiváděno přes odpor Rf na vstup. Záporná zpětná vazba je tedy silnější a zesílení nižší.
+
+Vstupní kondenzátory C1 a C2 jsou vazební. Slouží k oddělení stejnosměrné složky od střídavé.
+
+Návrh 
+
+Při návrhu doporučuji postupovat následovně. Prvně bych začal nastavením klidových pracovních bodů, který se nastavuje odpory Rc1 a Rc2. Napětí na kolektoru T1 není až tak podstatné a je potřeba se zaměřit hlavně na kolektor T2. Na něm je ideální mít klidové stejnosměrné napětí okolo 1/2 napájecího. Pro vyšší účinnost je úplně nejlepší ho nastavit na velikost maximální očekávané amplitudy, ale pro předzesilovač, který nemá prakticky žádný příkon je to dle mého názoru zbytečné.
+
+Dalším krokem je nastavení zesílení, které doporučuji nastavovat převážně emitorovým odporem Re1. Po jeho změně se pochopitelně pohne i klidový pracovní bod, takže je potřeba znovu upravit i Rc1. Odpor Rf doporučuji volit velký, v řádu stovek kOhm z výše zmíněného důvodu. To samé Ce, co největší, pokud není žádoucí nižší zesílení na nižších frekvencích.
+
+Možné problémy
+
+Prvním možným problémem je, že se zesilovač rozkmitá, což je nežádoucí. Může to být z několika důvodů. Nejčastějšími problémy bývá špatně navržená deska, problém se zpětnou vazbou nebo nestabilní napájení. Já jsem měl zrovna "štěstí" na tu třetí možnost. Nic se nedělo do chvíle, kdy jsme spojil výstup předzesilovače se vstupem koncového zesilovače. V tu chvíli se výstup rozkmital frekvencí asi 300 Hz. Vstup předzesilovače byl mimochodem zkratovaný na zem. Chvíli mi trvalo na to přijít, ale nakonec jsem zjistil, že to byl problém právě s napájením. Koncový zesilovač začal odebírat proud, což zapříčinilo lehký zákmit napájecího napětí, které bylo společné i pro předzesilovač. Změna se tedy projevila i na výstupu předzesilovače a už to jelo... Řešením je použit separátní zdroj, případně stabilizátor nebo alespoň diodu zapojenou do série s napájením předzesilovače.
+
+Dalším ani ne tak problémem, jako spíš vlastností může být akustická zpětná vazba. Jakmile se zvuková vlna dostane z reproduktoru (v mém případě amplionu) zpátky k mikrofonu, tak se vytvoří v podstatě kladná zpětná vazba a celý obvod začne opět kmitat. Tenhle problém se dá do určité míry potlačit fázovým posunem vstupu oproti výstupu. Jednodušší je však pouze nastavit nižší citlivost / zesílení a mikrofon směřovat opačným směrem, než je reproduktor.
+
