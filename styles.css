@@ -1,3 +1,10 @@
+@media (min-width: 768px) { /* Pouze pro větší obrazovky */
+    body {
+        font-size: 120%; /* Zvýší velikost písma */
+        zoom: 1.2; /* Zvětší celou stránku */
+    }
+}
+
 /* Výchozí tmavý režim */
 body {
     background-color: #0d0d0d;
@@ -13,6 +20,8 @@ header {
     padding: 20px;
     text-align: center;
 }
+
+/*navigační menu*/
 
 nav ul {	/*zarovnání na střed*/
     list-style: none;
@@ -30,8 +39,7 @@ nav ul li a {
     font-weight: bold;
 }
 
-ul li a {
-    color: #ff6600;
+ul li a {   /*odkazy na články*/
     text-decoration: none;
 }
 
@@ -49,16 +57,10 @@ button {
     font-weight: bold;
 }
 
-p, h1, h2{
-	margin-left: 40px;
-	margin-right: 40px;
+p, h1, h2{  /*odsazení textu od krajů*/
+	margin-left: 20px;
+	margin-right: 20px;
 }
-
-figure {
-  padding: 0px;
-  justify-content: center;
-}
-
 
 /* Světlý režim */
 .light-mode {
@@ -79,11 +81,10 @@ figure {
     color: #ffffff;
 }
 
-table{
+table{  /*styl tabulek*/
   margin-left: 40px;
   color: black;
   text-align: center;
-  
 }
 
 th, td {
@@ -93,7 +94,7 @@ th, td {
   margin-left: 40px;
 }
 
-.gallery-row {
+.gallery-row {  /*obrázky*/
     display: flex;
     justify-content: center; /* Zarovná obrázky na střed */
     flex-wrap: wrap; /* Umožní zalomení na menších obrazovkách */
@@ -110,7 +111,7 @@ th, td {
     font-style: italic;
 }
 
-iframe {
+iframe {    /*videa*/
     width: 40%; /* 40 % šířky rodičovského prvku */
     height: calc(40vw * 9 / 16); /* Dynamická výška dle šířky */
     margin: auto;
