@@ -97,6 +97,7 @@ th, td {
 .gallery-row {  /*obrázky*/
     display: flex;
     justify-content: center; /* Zarovná obrázky na střed */
+    align-items: center;
     flex-wrap: wrap; /* Umožní zalomení na menších obrazovkách */
     gap: 10px; /* Mezera mezi obrázky */
 }
