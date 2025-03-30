@@ -32,17 +32,19 @@
 
         <h2>Princip</h2>
         <p>
-            Jedná se o dvoustupňový zesilovač. Zesilovacími prvky je dvojice NPN tranzistorů. Oba jsou zapojené v
+            Jedná se o dvoustupňový zesilovač. Zesilovacími prvky
+            je dvojice NPN tranzistorů. Signál je přes vazební kondenzátor C1 přiveden na bázi tranzistoru T1,
+            zesílen a přiveden na bázi tranzistoru T2. Následně je pomocí vazebního kondenzátoru C2 oddělen stejnosměrná
+            složka, takže na výstupu bude v ideálním případě po zatížení symetrický střídavý signál.</p>
+        <p> Oba tranzistory jsou zapojené v
             zapojení se společným emitorem (SE), které má tu vlastnost, že zesiluje převážně napětí. Tato konfigurace by
             byla kvůli extrémně velkému zesílení nestabilní, tudíž musí být zavedena záporná zpětná vazba. U prvního
             stupně k nastavení této zpětné vazby slouží emitorový odpor Re1. Re1 ovlivní i klidový pracovní bod
-            tranzistoru T1, ale k jeho nastavení slouží převážně kolektorový odpor Rc1.
-        </p>
-        <p>
-            U druhého stupně je to obdobně. Jediným rozdílem je, že k Re2 je paralelně připojen kondenzátor Ce. Takzvané
+            tranzistoru T1, ale k jeho nastavení slouží převážně kolektorový odpor Rc1. U druhého stupně je to obdobně.
+            Jediným rozdílem je, že k Re2 je paralelně připojen kondenzátor Ce. Takzvané
             zapojení s blokovaným emitorem. Ce pro střídavý signál vykazuje nízkou reaktanci a záporná zpětná vazba je
             tedy oslabena, tudíž zesílení je zvýšeno. Klidový pracovní bod tranzistoru T2 je pevně nastaven odpory Rc2 a
-            Re2. Odpor Rc2 zároveň určuje výstupní odpor předzesilovače, takže není ideální ho volit moc velký.
+            Re2. Odpor Rc2 zároveň určuje výstupní odpor předzesilovače, takže není ideální ho volit příliš velký.
         </p>
         <p>
             Poslední součástkou související se signálovou cestou je odpor Rf, který přivádí stejnosměrné napětí na bázi
@@ -89,6 +91,10 @@
             Řešením je použit separátní zdroj, případně stabilizátor nebo alespoň diodu zapojenou do série s napájením
             předzesilovače.
         </p>
+        <div class="gallery-row">
+            <img src="obrazky/predzesilovac/zdroj.png" alt="zdroj" width="40%">
+        </div>
+        <p class="description">Zapojení pro eleminaci zvlnění napájecího zdroje</p>
         <p>
             Dalším ani ne tak problémem, jako spíš vlastností může být akustická zpětná vazba. Jakmile se zvuková vlna
             dostane z reproduktoru (v mém případě amplionu) zpátky k mikrofonu, tak se vytvoří v podstatě kladná zpětná

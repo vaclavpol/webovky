@@ -57,7 +57,7 @@ button {
     font-weight: bold;
 }
 
-p, h1, h2{  /*odsazení textu od krajů*/
+p, h1, h2, h3{  /*odsazení textu od krajů*/
 	margin-left: 20px;
 	margin-right: 20px;
 }
