@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Titulek</title>
+   <link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body>
+   <header>
+      <nav>
+         <ul>
+            <li><a href="../../index.html">Domů</a></li>
+            <li><a href="../../clanky.html">Články</a></li>
+            <li><a href="../../info.html">O mně</a></li>
+         </ul>
+      </nav>
+      <button id="theme-toggle">Přepnout motiv</button>
+   </header>
+   <main>
+      <h1>Jednoduchá signalizace zapnutých světel</h1>
+      <h2>Nápad</h2>
+      <p>Každý se už určitě setkal s nepříjemností, že v autě, na motorce nebo na jiném vozidle zapomněl zapnutá světla
+         a když se pak vrátil, akumulátor byl vybitý na nulu... Novější kousky už mají signalizaci většinou reagující na
+         základě otevření dveří na straně řidiče. Pro vozidla, která tímto systémem vybavené nejsou jsem vymyslel velmi
+         jednoduchý obvod, který tuto signalizaci doplní.</p>
+      <h2>Princip</h2>
+      <p>
+
+         Princip je následující. Pokud jsou světla zapnutá, bází tranzistoru T1 přes odpor R1 prochází proud, takže
+         tranzistor se otevře. Pokud je zapnuté i zapalování, otevře se přes odpor R3 stejným způsobem tranzistor T3,
+         přes který je proud tekoucí odporem R2 odváděn do emitoru tranzistoru T2 (případně do země), tudíž T2 zůstává
+         uzavřený. Jakmile však dojde k vypnutí zapalování, T3 se uzavře a proud odporem R2 začne téct do báze T2. V
+         tuto chvíli jsou T1 i T2 otevřené a jelikož jsou zapojené sériově, je uzavřen obvod a spustí se zvuková
+         signalizace. Odpor R4 slouží pouze k omezení proudu signalizačním prvkem (např. piezo bzučákem). Jedná se v
+         podstatě o logický obvod AND s jedním invertovaným vstupem.</p>
+
+      <div class="gallery-row">
+         <img src="obrazky/signalizace/schema.png" alt="schema" width="50%">
+      </div>
+      <p class="description">Schéma zapojení</p>
+
+      <p>
+         K napájení může být použita hlavní napájecí +12V větev, ale jelikož systém má reagovat jen při zapnutých
+         světlech a jeho příkon je minimální, není problém jako napájení využít svorku světel. Tranzistory jsem zvolil
+         BC547, které vydrží kolektorový proud do 100 mA. Kdo by chtěl použít silnější sirénu, může dát něco lepšího
+         :-). Co se hodnot ostatních součástek týče, odpory R1, R2, R3 slouží jen pro omezení bázového proudu
+         tranzistorů, takže jejich hodnota není kritická, pro BC547 bych volil okolo 10 kOhm. Hodnota odporu R4 závisí
+         na požadovaném proudu signalizací a v případě signalizace stavěné přímo na napětí napájení je možné ho nahradit
+         zkratem.</p>
+         <div class="gallery-row">
+            <img src="obrazky/signalizace/dps.png" alt="dps" width="50%">
+         </div>
+         <p class="description">DPS může vypadat třeba takhle, rozměry jsou pouhých asi 20 x 35 mm</p>
+   </main>
+   <footer>
+      <p>&copy; 2025 Václav Polák</p>
+   </footer>
+   <script src="../../script.js"></script>
+</body>
+</body>
+
+</html>
