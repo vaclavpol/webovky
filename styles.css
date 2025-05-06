@@ -112,6 +112,12 @@ th, td {
     font-style: italic;
 }
 
+.description_l {
+    text-align: left;
+    margin: 10px; /* Odsazení nahoře a dole */
+    font-style: italic;
+}
+
 iframe {    /*videa*/
     width: 40%; /* 40 % šířky rodičovského prvku */
     height: calc(40vw * 9 / 16); /* Dynamická výška dle šířky */

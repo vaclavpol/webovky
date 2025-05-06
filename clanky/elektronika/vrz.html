@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Titulek</title>
+   <link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body>
+   <header>
+      <nav>
+         <ul>
+            <li><a href="../../index.html">Domů</a></li>
+            <li><a href="../../clanky.html">Články</a></li>
+            <li><a href="../../info.html">O mně</a></li>
+         </ul>
+      </nav>
+      <button id="theme-toggle">Přepnout motiv</button>
+   </header>
+   <main>
+      <h1>Policejní siréna</h1>
+      <p>Policejní siréna na 12V do auta za pár stovek z Číny. Skládá se z ovládací krabičky s tlačítky a mikrofonem, od
+         které je vedený plochý propojovací kabel do amplionu, který je možné díky RJ 11 konektoru rozpojit. Z amplionu
+         jsou ještě vyvedené 2 kabely určené pro napájení. Jelikož nikde žádná dokumentace není (ostatně jako k většině
+         čínských zařízení), tak jsem se rozhodl celé zařízení rozebrat, překreslit a zjistit, jak funguje.
+      </p>
+      <p>
+         Uvnitř amplionu je malá destička s integrovaným digitálním NF zesilovačem Nsiway NS4110B o výkonu 18W
+         odpovídajícímu příkonu celého zařízení, tudíž údajných 100W uváděných prodejcem je nesmysl. Zesilovač je
+         pravěpodoně zapojen jako invertující. Při provozu sirény díky velké amplitudě vstupního signálu (5V) a
+         dostatečnému zesílení zesilovač pracuje v saturaci. Při snížení amplitudy vstupního signálu však dojde k
+         značnému zkreslení výstupního signálu.
+      </p>
+      <p>
+         Mnohem zajímavější než zesilovač je však ovládací krabička. Propojovací kabel má 4 žíly - zem (žlutá), napájení
+         +12V (zelená), aktivační signál pro zesilovač (černá), audio signál (červená). Jako generátor / modulátor audio
+         signálu slouží neoznačený SMD čip. Jeho zvukový výstup je digitální (0 - 5V), frekvenčně modulovaný. Čip má 7
+         vstupů pro tlačítka, která jsou přes 47k pull-up odpory připojená k 5V napájecí větvi. Napájecí věteví je zde
+         myšlena katoda Zenerovy diody, která v sériovém spojením s odpory z 12V větve tvoří jednoduchý 5V zdroj. Při
+         stisknutí některého z tlačítek čip nastaví na aktivačním pinu logickou jedničku (5V), která je přes diodu
+         přivedena na aktivační pin zesilovače (EN, příp. CTRL). Ve stejnou chvíli se na výstupním pinu čipu objeví
+         audio signál, který je přes 2k2 odpor přiveden na vstup zesilovače (SIG). Nyní něco k vestavěnému mikrofonu.
+         Jedná se o kapacitní mikrofon bez aktivního předzesilovače. Po stisknutí bočního tlačítka se odpojí napájení
+         čipu, čímž se znemožní současné použití sirény a 5V napájecí větev je přes 10k odpor přepojena na aktivační pin
+         zesilovače (EN, příp. CTRL) a zároveň na jeden vývod mikrofonu. Ten je pomocí druhého kontaktu bočního
+         tlačítka přes vazební kondenzátor a 2k2 odpor přiveden na vstup zesilovače (SIG). Úroveň signálu z mikrofonu
+         pochopitelně není tak vysoká jako z čipu při provozu sirény, tudíž je amplion méně hlasitý.
+      </p>
+      <div class="gallery-row"><img src="obrazky/vrz/schema.png" alt="schema" width="50%"></div>
+      <p class="description">Schéma zapojení</p>
+      <p>
+         Závěrem bych zmínil pár možných úprav. Zaměřil bych se převážně na NF zesilovač, který by bylo pro vyšší
+         hlasitost vhodné nahradit něčím kvalitnějším a výkonnějším. Bohužel netuším, na jaký výkon je dimenzován
+         samotný amplion, takže si ho netroufám moc přetížit. Dále bych přidal aktivní předzesilvoač k mikrofonu nebo
+         snížil úroveň digitálního signálu sirény, aby byla hlasitost v obou režimech podobná. Další úpravou, kterou jsem
+         sám udělal je regulace hlasitosti. Stačí jen přerušit signálový kabel a proti zemi na něj zapojit potenciometr
+         jako nastavitelný napěťový dělič.
+      </p>
+      <p>
+         Tady ještě přidávám nahrávky všech režimů sirény. Záznamy jsou pořízeny přímým propojením signálového vstupu zesilovače
+         s mikrofonním vstupem počítače, tudíž by jejich kvalita měla být poměrně obstojná.</p>
+      <audio controls>
+         <source src="audio/hi_lo.wav" type="audio/ogg">
+      </audio>
+      <p class="description_l">HI-LO</p>
+      <audio controls>
+         <source src="audio/horn.wav" type="audio/ogg">
+      </audio>
+      <p class="description_l">HORN</p>
+      <audio controls>
+         <source src="audio/siren.wav" type="audio/ogg">
+      </audio>
+      <p class="description_l">SIREN</p>
+      <audio controls>
+         <source src="audio/wail.wav" type="audio/ogg">
+      </audio>
+      <p class="description_l">WAIL-1</p>
+      <audio controls>
+         <source src="audio/wail_1_1.wav" type="audio/ogg">
+      </audio>
+      <p class="description_l">WAIL-1 (spodní)</p>
+      <audio controls>
+         <source src="audio/wail_2.wav" type="audio/ogg">
+      </audio>
+      <p class="description_l">WAIL-2</p>
+      <audio controls>
+         <source src="audio/wail_2_2.wav" type="audio/ogg">
+      </audio>
+      <p class="description_l">WAIL-2 (spodní)</p>
+
+   </main>
+   <footer>
+      <p>&copy; 2025 Václav Polák</p>
+   </footer>
+   <script src="../../script.js"></script>
+</body>
+</body>
+
+</html>
