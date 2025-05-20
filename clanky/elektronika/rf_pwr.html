@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulek</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Domů</a></li>
+                <li><a href="../../clanky.html">Články</a></li>
+                <li><a href="../../info.html">O mně</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">Přepnout motiv</button>
+    </header>
+    <main>
+        <h1>Měřič VF výkonu</h1>
+        <p>Delší dobu mi doma ležel starý analogový budík bez využití. Mám na mysli obyčejný ručičkový přístroj výrobce
+            Metra Blansko. Původně v něm něco nejspíš bylo, ale jediné, co je důležité znát, jsou parametry maximální
+            výchylky ručičky při přivedení signálu přímo na vychylovací vinutí - konkrétně napětí odpovídá asi 850 mV,
+            proud 500 uA, což dává odpor vinutí nějakých 1,7 kOhm, což je krásně vysoká hodnota. Můj plán byl využít ho
+            pro měřič VF výkonu převážně u vysílaček. Takový jednoduchý přístroj není nic jiného než zátěž, usměrňovač,
+            vyhlazovací kondenzátor a nějaký indikátor. Jako zátěž jsem zvolil paralelní kombinaci dvou 100 Ohm 5 W
+            výkonových odporů. To odpovídá výslednému odporu 50 Ohm a maximální výkonové ztrátě 10 W (krátkodobé
+            přetížení není problém).
+        </p>
+        <h3 style="color: orange; text-align: center; margin-left: 30%; margin-right: 30%;">
+            UPOZORNĚNÍ! Při výběru zatěžovacích odporů je potřeba mít
+            jistotu, že se jedná o vrstvové, nikoliv drátové
+            odpory, které by při vyšších frekvencích vykazovaly nezanedbatelnou indukčnostní reaktanci!
+        </h3>
+        <p>
+            Jako usměrňovač byla zvolena signálová dioda 1N4148, která by měla být dostatečně rychlá pro tuto aplikaci
+            alespoň někam do VHF pásma. Vyhlazovací kondenzátor může být vzhledem k nízké spotřebě samotného indikátoru
+            poměrně malý, stačí řádově desítky až stovky nF. V případě použití analogového budíku bez předřadníku je
+            potřeba předřadník dodělat. Nejjednodušší konstrukce není nic jiného, než odpor v sérii s jeho vychylováním
+            vinutím. Já jsem ještě přidal přepínač na 2 rozsahy (12 V a 32 V, na zátěži 50 Ohm zhruba 3 W a 20 W), což
+            ale není nutnost. Optimální je jako předřadník využít jeden pevný a druhý proměnný odpor (např. víceotáčkový
+            trimr), aby se dal měřič přesně zkalibrovat. Pro co nejpřesnější měření je totiž třeba brát ohled například
+            na úbytek napětí na usměrňovací diodě, skutečnou střední hodnotu stejnosměrného napětí na vyhlazovacím
+            kondenzátoru apod. Stupnice by bylo lepší než lineární udělat logaritmické, aby mohl být zobrazovaný přímo
+            výkon, nikoliv jen napětí, které se pak na výkon přepočítá podle vztahu P = U^2 / 50. Toho jsem zatím
+            bohužel nebyl schopen, ale časem se pokusím stupnici vyměnit. Oba rozsahy jsem tedy ocejchoval efektivní
+            hodnotou napětí, takže podle uvedeného vztahu vyjde přímo efektivní výkon. Pokud by indikátor ukazoval
+            skutečnou stejnosměrnou (teoreticky špičkovou) hodnotu, vztah pro efektivní výkon by pak byl P = ((U^2) /
+            1,41) / 50.
+        </p>
+        <p>
+            Celé zařízení jsem zabudoval do krabičky analogového budíku, do které jsem zezadu vyvrtal díru pro přepínač
+            rozsahů a SMA konektor pro přivedení signálu. Tato konstrukce má výhodu, že je extrémně jednoduchá,
+            nepotřebuje nezávislý napájecí zdroj a při troše snahy se dá docílit poměrně použitelných výsledků měření.
+            Ještě by nebylo na škodu přidat ochranu budíku proti přepálení vychylovacího vinutí, která by se dala
+            realizovat například pomocí dvou sériových kombinací křemíkových diod zapojených antiparalelně, což by
+            omezilo případnou napěťovou špičku obou polarit na zhruba 1,4 V, což ještě budík krátkodobě vydrží.
+        </p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Václav Polák</p>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+</body>
+
+</html>
