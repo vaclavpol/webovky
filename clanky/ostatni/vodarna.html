@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titulek</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../index.html">Domů</a></li>
+                <li><a href="../../clanky.html">Články</a></li>
+                <li><a href="../../info.html">O mně</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">Přepnout motiv</button>
+    </header>
+    <main>
+        <h1>Domácí vodárna svépomoci</h1>
+
+        <p>
+            Domácí vodárna typu Darling ve sklepě fungovala už dobrých nejmíň 40 let, ale poslední dobou čerpadlo čím
+            dál víc ztrácelo na výkonu, zvládlo natlakovat systém jen na dost nízký tlak a například při zalévání běželo
+            bez přestávky, což vedlo i k přehřívání motoru a dalším problémům. Mimo jiné byla vodárna dost hlučná,
+            hlavně kvůli silným vibracím. Rozhodl jsem se tedy, že celé soustrojí navrhnu a sestavím kompletně znovu.
+        </p>
+        <div class="gallery-row">
+            <img src="obrazky/vodarna/vodarna_old.JPG" alt="vodarna_old" width="30%" />
+            <img src="obrazky/vodarna/kaverna.jpg" alt="kaverna" width="50%" />
+        </div>
+        <p class="description">Vlevo původní vodárna, vpravo místo, kde se nacházela</p>
+        <h2>Návrh a nákup</h2>
+        <p>
+            Odpíchl jsem se od toho, že už byl připravený motor, spojovací mezikus mezi motor a čerpadlo a čerpadlo s
+            mechanickou ucpávkou. Tady ale nastal první problém. Čerpadlo s mechanickou ucpávkou totiž není vhodné pro
+            tvrdou vodu a navíc je nepoužitelné v kombinaci se zpětnou klapkou na jeho výtlaku, která byla nutná. Bylo
+            pořízeno už spoustu let zpátky od známého a v té době se pravděpodobně o těchto možných problémech nevědělo.
+            Čerpadlo jsem tedy prodal jako nové a místo něj koupil to stejné, ale s klasickou provazcovou ucpávkou,
+            konkrétně typ Sigma 32-SVA-130-10-2-LM-952. Označení je totožné s původním čerpadlem (2-stupňové na průměr
+            potrubí 32 mm) s rozdílem v posledním čísle, které říká, zda se jedná o patkové (na základnu) nebo přírubové
+            (pro monoblok) provedení a zároveň určuje právě typ ucpávky.
+        </p>
+        <p>
+            Co se motoru týče, tak jde o starší kus vyrobený v MEZ Mohelnice, ale s minimálními známkami opotřebení. Je
+            to klasický 3-fázový asynchronní motor o výkonu 1,5 kW, což je pro domácí vodárnu tak akorát. Počet pólů je
+            4, takže otáčky vychází přibližně na 1500 mínus nějaký ten skluz.
+        </p>
+        <p>
+            Už jsem zmínil mezikus, což znamená, že se jedná o monoblok, kde je motor s čerpadlem pevně spojený, tudíž
+            by oproti předchozí konstrukci nemělo docházet k žádnému vyosení hřídelí. Dále jsem nakoupil výtlačnou
+            tvarovku, mosazné vsuvky, přírubu s převlečnou maticí pro tlakový spínač a postupně spoustu potřebného
+            spojovacího materiálu.
+        </p>
+        <h2>Montáž soustrojí</h2>
+        <p>
+            Následně bylo možné si víceméně celou vodárnu sestavit na stole. Začal jsem nasazením půlspojky na hřídel
+            nového čerpadla. Očistil jsem obě plochy, lehce namazal vazelínou a půlspojku gumovou palicí s citem narazil
+            na hřídel. Na motoru už byla, takže stačilo jen vložit silonový trojúhelníček a pomocí mezikusu spojit. Po
+            montáži se ukázalo, že vůle mezi půlspojkami je moc malá, tak jsem to ještě jednou rozebral a půlspojku na
+            čerpadle narazil o něco dál.
+        </p>
+        <p>
+            Dalším krokem byla montáž výtlačné tvarovky a zpětné klapky. S tím nebyl problém, jen bylo potřeba vyrobit
+            dva M12 svorníky, což se mi několikrát kvůli chybnému naměření potřebné délky nepovedlo, ale nakonec jsem to
+            nějak zvládl. Dále následovala montáž manometru a tlakového spínače, na kterém bylo třeba ještě předem
+            vyměnit přírubu s vnějším závitem za variantu s prevlečnou maticí. Původně byl totiž tlakový spínač
+            přimontovaný k motoru s tlak k němu byl veden dlouhou trubičkou na konci s vnitřním závitem, která však měla
+            tendenci se po čase zanášet úsadami. Aktuálně prodávané vodárny už mají tlakový spínač přes vsuvku přímo na
+            výtlačné tvarovce, tak jsem to udělal stejně.
+        </p>
+
+        <div class="gallery-row">
+            <img src="obrazky/vodarna/svorniky.jpg" alt="svorniky" width="35%" />
+            <img src="obrazky/vodarna/vodarna_new1.jpg" alt="vodarna_new1" width="35%" />
+        </div>
+        <p class="description">Vlevo svorníky pro montáž výtlačné tvarovky, vpravo hotové soustrojí</p>
+
+        <div class="gallery-row">
+            <img src="obrazky/vodarna/cerpadlo.jpg" alt="cerpadlo" width="20%" />
+        </div>
+        <p class="description"> Pro zajímavost, takhle smontované soustrojí váží přibližně 40 kg, což je o něco méně než
+            původní a není
+            ještě takový problém ho v jednom člověku přemisťovat.</p>
+
+        <h2>Expanzka</h2>
+        <p>
+            Ještě před monáží do sklepa bylo potřeba vyřešit expanzní nádobu. Na staré vodárně byla namontována pouhých
+            asi 6 let stará expanzka o objemu 35 l. Problém byl, že pryžový vak byl poškozený a do prostoru, kde má být
+            pouze vzduch, se dostala i voda. Ač byl vnitřek expanzky kvůli vniknutí vody lehce vyrezlý, byla nakonec
+            zvolena pouze výměna vaku.
+        </p>
+
+        <div class="gallery-row">
+            <img src="obrazky/vodarna/vak_old.jpg" alt="expanzka" width="35%" />
+            <img src="obrazky/vodarna/vak.jpg" alt="expanzka_new" width="35%" />
+        </div>
+        <p class="description">Vlevo vnitřní strana původního vaku, vpravo expanzka s novým vakem</p>
+
+        <h2>Sestavení</h2>
+        <p>
+            Začal jsem se sestavováním. Jako první jsem vyrobil podstavu, kterou je fošna o průřezu asi 300x50 mm a ve
+            které jsou vyvrtány 4 díry na vratové šrouby M10 sloužící k upevnění mezikusu. Tato fošna je na každé straně
+            podložena jedním asi 100 mm dlouhým hranolem o stejném průřezu. Všechny dřevěné díly jsou kvůli umístění ve
+            vlhkém prostředí natřeny dvěma vrstvami lodního laku. Po umístění do sklepa ještě bylo nutné drobné
+            vypodložení tak, aby sací příruba čerpadla seděla na přírubě sacího potrubí. Sací příruby jsem ještě předtím
+            očistil od nečistot, lehce obrousil a vyměnil všechna gumová těsnění. Následovalo našroubování expanzní
+            nádoby a výstupní mosazné vsuvky do výtlačné tvarovky. Kombinace vsuvky a převlečné matice se nakonec
+            ukázala jako poměrně nevhodná kvůli malé těsnící ploše, ale po použití tvrdšího těsnění vše funguje jak má.
+            Původně byla namontována výtlačná tvarovka pro tlakovou hadici, což však bylo dost nepraktické a zbytečně
+            složité vzhledem k zbytku systému z PPR trubek.
+        </p>
+        <p>
+            Všechny trubkové závity se osvědčilo těsnit konopným těsněním a fermeží. Teflonová páska není špatná, ale na
+            větší závity je jí škoda a navíc jsou pak spoje celkově méně mechanicky odolné.
+        </p>
+
+        <div class="gallery-row">
+            <img src="obrazky/vodarna/podstava1.jpg" alt="podstava1" width="35%" />
+            <img src="obrazky/vodarna/podstava.jpg" alt="podstava" width="35%" />
+        </div>
+        <p class="description">Podstava vodárny</p>
+        <h2>Uvedení do provozu</h2>
+        <p>
+            Po zapojení 3-fázového přívodu na svorkovnici tlakového spínače a propojení tlakového spínače bylo
+            potřeba
+            otestovat, zda je směr otáčení správný. V opačném případě je řešením prohození libovolných dvou fází
+            mezi
+            sebou. Vzhledem k tomu, že je motor zapojen na 400 V síť, je nakonfigurovaný do hvězdy bez zapojeného
+            středu. Přívod je zapojený přes původní motorový spouštěč s nominální hodnotou proudu 3,6 A, která se
+            shoduje s hodnotou uvedenou na štítku motoru.
+        </p>
+        <p>
+            Dalším hodně důležitým krokem je správné zavodnění. Ideální by bylo sací potrubí i čerpadlo zavodnit
+            skrz
+            odbočku s ventilem na sacím potrubí, ale taková možnost nebyla. Nezbývalo tedy, než vodu po odšroubování
+            zátky nalévat poměrně malým otvorem na sací přírubě. Nakonec to nebylo tak hrozné a na zavodnění stačily
+            pouze asi 3 velké pet lahve vody. Posledním krokem příprav bylo napustit do expanzky přes ventilek
+            kompresorem vzduch. Já jsem zvolil tlak 1,5 atm., což je přiměřená hodnota, která by na sucho neměla
+            nic poškodit.
+        </p>
+        <p>
+            Nezbývalo než zapnout spouštěč a doufat, že všechno dobře dopadne. Je potřeba poznat, zda je zvuk
+            vodárny
+            správný nebo ne, protože pokud by se z nějakého důvodu například nepodařilo nasát vodu, mohlo by to vést
+            k
+            velmi rychlé zkáze čerpadla. Naštěstí se podařilo a čerpadlo úspěšně natlakovalo expanzku. Posledním
+            krokem
+            je nastavení vypínacího / zapínacího tlaku, které se dělá kolečkem na tlakovém spínači. Vypínací jsem
+            nastavil na 3,5 atm., přičemž zapínací vycházel na 1,9 atm. Jakmile je zjištěn zapínací, nastaví se
+            “klidový” po vypuštění vody na hodnotu o 0,2 atm. nižší, než je zapínací. Tady to vycházelo na 1,7 atm.
+            (1,9
+            - 0,2 = 1,7) Zvlášť ze začátku je vhodné tlak častěji kontrolovat přes ventilek a případně ho upravit na
+            požadovanou hodnotu.</p>
+        <div class="gallery-row">
+            <img src="obrazky/vodarna/vodarna_new.jpg" alt="vodarna_new" width="60%" />
+        </div>
+        <p class="description">Hotová vodárna</p>
+
+        <h2>Další obrázky</h2>
+        <div class="gallery-row">
+            <img src="obrazky/vodarna/spojka1.jpg" alt="spojka1" width="35%" />
+            <img src="obrazky/vodarna/spojka.jpg" alt="spojka" width="35%" />
+        </div>
+        <p class="description">Původní, poškozená, spojka mezi čerpadlem a motorem (vpravo porovnání s novou)</p>
+
+        <div class="gallery-row">
+            <img src="obrazky/vodarna/potrubi.jpg" alt="potrubi" width="35%" />
+            <img src="obrazky/vodarna/priruba.jpg" alt="priruba" width="35%" />
+        </div>
+        <p class="description">Sací potrubí a obroušená příruba</p>
+        <div class="gallery-row">
+            <img src="obrazky/vodarna/tvarovka.jpg" alt="tvarovka" width="35%" />
+        </div>
+        <p class="description">Původní výtlačná tvarovka</p>
+    </main>
+    <footer>
+        <p>&copy; 2025 Václav Polák</p>
+    </footer>
+    <script src="../../script.js"></script>
+</body>
+</body>
+
+</html>

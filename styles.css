@@ -1,7 +1,7 @@
 @media (min-width: 768px) { /* Pouze pro větší obrazovky */
     body {
-        font-size: 120%; /* Zvýší velikost písma */
-        zoom: 1.2; /* Zvětší celou stránku */
+        font-size: 110%; /* Zvýší velikost písma */
+        zoom: 1.1; /* Zvětší celou stránku */
     }
 }
 
