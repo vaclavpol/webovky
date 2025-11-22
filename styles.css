@@ -104,6 +104,7 @@ th, td {
 
 .gallery-row img {
     margin-top: 10px;
+    max-width: 1000px;
 }
 
 .description {
