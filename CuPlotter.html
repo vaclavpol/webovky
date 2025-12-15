@@ -24,24 +24,50 @@
         <h2>Srtučný popis</h2>
         <p>Dvouosý CNC stroj určený pro usnadnění výroby plošných spojů v domácích podmínkách. Na této stránce se
             nachází návod k obsluze stroje a všechny potřebné soubory pro jeho provoz. </p>
-        <h1>Software a firmware</h1>
+        <h2>Software a firmware</h2>
         <ul>
             <li>GRBL - <a href="https://github.com/grbl/grbl?tab=readme-ov-file">odkaz na oficiální stránku</a></li>
             <li>Universal Gcode Sender (UGS) - <a href="https://winder.github.io/ugs_website/">odkaz na oficiální
                     stránku</a></li>
             <li>FlatCam - <a href="http://flatcam.org/download">odkaz na oficiální stránku &emsp;</a><a
-                href="https://drive.google.com/drive/folders/1sCBYOjP_K2XKYgDagDPQqvY4xDjRxZQf">odkaz ke stažení
-                nejnovější verze programu (na oficiální stránce z nějakého důvodu není dostupná)</a></li>
+                    href="https://drive.google.com/drive/folders/1sCBYOjP_K2XKYgDagDPQqvY4xDjRxZQf">odkaz ke stažení
+                    nejnovější verze programu (na oficiální stránce z nějakého důvodu není dostupná)</a></li>
             <li>Universal Gcode Sender (UGS) - <a href="https://winder.github.io/ugs_website/">odkaz na oficiální
                     stránku</a></li>
         </ul>
-        <h1>Upravené soubory</h1>
+        <h2>Upravené soubory</h2>
+            <ul>
+                <li>Upravený soubor <a href="#" onclick="downloadFile('CuPlotter_soubory/config.h')">config.h</a> -
+                    nahradit originální</li>
+                <li>Upravený soubor <a href="#" onclick="downloadFile('CuPlotter_soubory/cpu_map.h')">cpu_map.h</a> -
+                    nahradit originální</li>
+                <li>Program <a href="#"
+                        onclick="downloadFile('CuPlotter_soubory/PostProcessing.py')">PostProcessing.py</a> pro
+                    zpracování G-kódu </li>
+            </ul>
+        <h2>Návod k obsluze</h2>
         <ul>
-            <li>Upravený soubor <a href="#" onclick="downloadFile('CuPlotter_soubory/config.h')">config.h</a> - nahradit originální</li>
-            <li>test <a href="CuPlotter_soubory/config.h">config.h</a></li>
-            <li>Upravený soubor <a href="#" onclick="downloadFile('CuPlotter_soubory/cpu_map.h')">cpu_map.h</a> - nahradit originální</li>
+                <li><a href="#" onclick="downloadFile('CuPlotter_soubory/config.h')">Návod k obsluze</a> ke stažení</li>
+            </ul>
+        
+        <!---
+        <p>CuPlotter – návod k obsluze<br>
+        Stroj je založen na firmwaru GRBL, což je univerzální open-source firmware určen pro CNC systémy. Nabízejí se tedy poměrně široké možnosti pro konfiguraci. Tento návod je sestaven na základě mých poznatků a zkušeností, skutečný postup se však může lišit podle konkrétních požadavků uživatele.</p>
+        <ol>
+            <li>Návrh musí být výrobě přizpůsoben. Je vhodné použít v celém návrhu stejnou šířku cest, ideálně odpovídající tloušťce kreslícího nástroje nebo větší. To samé platí pro plošky, jejichž vnější rozměr je vhodné nastavit o něco větší zvlášť pro THT součástky, kde při následném vrtání může snadno dojít k jejich poškození. Nedoporučuji používat velké (například zemnící) plochy, protože poměrně dost komplikují další zpracování i samotnou výrobu. může dojít k poškození nebo v horším případě utržení malé plošky. Pokud je žádoucí, aby se vykreslil i obrys desky, je vhodné jeho šířku také zvětšit.</li><br>
+            <li>Prvně je potřeba si připravit soubory k výrobě. Většina programů jako KiCad, EasyEDA apod. podporují export souborů Gerber, což jsou soubory přímo určené pro výrobu. Je možné použít například i formát SVG, který stejně jako Gerber obsahuje vektorovou grafiku, ale není uzpůsoben pro výrobu. Doporučuji pro THT exportovat jen vrstvu obsahující cesty na spodní straně DPS, pro SMD na vrchní straně a v obou případech již zmíněný obrys.</li><br>
+            <li>Nyní můžeme soubory importovat do programu, který umožní převod grafiky na G-kód pro stroj. Osvědčil se mi program FlatCam, protože je určený pro frézování DPS. Po provedení importu Gerber souborů je možné nastavit počátek (0xy), který je vhodné nastavit do jednoho z rohů DPS. Důležité je také překlopit grafiku po ose X, protože jinak bude výsledná DPS zrcadlově otočená! Gerber soubory převedeme na geometrii, což nám zobrazí vypočítanou trasu nástroje. Před převodem na geometrii je nezbytné nastavit průměr nástroje na zápornou hodnotu, protože program jinak počítá s frézováním izolačních mezer a tato úprava nastavení provede inverzi. V případě použití širších cest je vhodné použít nástroj „Paint“ pro vyplnění ploch. Pokud vše vypadá, jak má, zbývá jen exportovat G-kód. Ještě doporučuji zvýšit rychlost (feedrate) pohybu z výchozích 120 mm/s na alespoň 300-400 mm/s. Tato hodnota se může zdát vysoká, ale vzhledem k malému stoupání trapézových tyčí by byl pohyb dost pomalý.</li><br>
+            <li>G-kód přejmenujeme na „vstup.nc“, přemístíme do složky s python programem pro postprocessing a program spustíme. Program nahradí příkazy určené pro osu Z za příkazy pro pohyb servem a nepotřebné příkazy smaže. Vytvoří se soubor vystup.nc. <br>
+            Pro generování G-kódu fungují i některé online převodníky SVG na G-kód, které ale většinou neumí pracovat s šířkou trasy a postrádají pokročilejší možnosti konfigurace.</li><br>
+            <li>Soubor můžeme otevřít v programu pro posílání G-kódu do stroje. Pro komunikaci lze využít libovolný software, který je schopen „parsovat“ G-kód po USB. Mně osobně se nejvíc osvědčil Universal G-code Sender, který má poměrně hezky zpracované uživatelské rozhraní včetně snadné konfigurace parametrů stroje. Mimo jiné obsahuje například vizualizér a textový editor kódu, což usnadní práci. Stroj je pomocí tohoto softwaru možné ovládat taky přes lokální síť, na kterou je počítač připojen, například přes mobilní zařízení.</li><br>
+            <li>Zapojíme napájení stroje (12–35 V DC), USB do počítače a v UGS navážeme komunikaci. V poli pro indikaci stavu stroje se objeví „ALARM“ a je blokován pohyb osami. Zvolíme „Home machine“, a počkáme, než se objeví stav stroje „IDLE“. Cuprextit upneme na vodorovnou základnu stroje. Kreslícím nástrojem si najedeme na pozici, kterou jsme si zvolili jako 0xy a vynulujeme souřadnice. Můžeme spustit program.<br>
+            Doporučení: Cuprextit je dobré před kreslením lehce obrousit jemným brusným papírem pro lepší adhezi povrchu. Pokud bude povrch příliš hladký, inkoust bude tvořit nesouvislou čáru a výsledek bude méně kvalitní.</li><br>
+            <li>Po dokončení kreslení DPS vyndáme a inkoust necháme uschnout. Pro urychlení schnutí je vhodné použít horkovzdušnou pistoli nebo například fén. DPS vystřihneme nůžkami na plech podle obrysu (Edge cuts) a můžeme vložit do leptacího roztoku. Osvědčil se mi roztok FeCl3 ohřátý na teplotu asi 60C, ve kterém je potřeba nechat DPS asi 15-20 minut pro dobré vyleptání. Po vyndání z roztoku omyjeme DPS pod tekoucí vodou a hadrem otřeme, následně očistíme technickým lihem fixu, což nám odhalí měď.</li><br>
+            <li>Pokud se jedná o THT desku, následuje vrtání děr. Pomocí důlčíku si uděláme značky na místech, kde mají být díry. Do vrtačky upneme vrták příslušného průměru a díry vyvrtáme. Dá se použít i ruční nástroj (Dremel apod.), ale pro lepší výsledky použijeme stojanovou vrtačku. Po vrtání desku znovu z obou stran obrousíme jemným brusným papírem pro zahlazení otřepů způsobených vrtáním.</li><br>
+            <li>Doporučuji všechny cesty pocínovat tenkou vrstvou, což pomůže předejít oxidaci mědi.</li><br>
+        </ol>
+        --->
 
-        </ul>
     </main>
     <footer>
         <p>&copy; 2025 Václav Polák</p>
@@ -49,12 +75,12 @@
 
 
     <script>
-    function downloadFile(filename) {
-        const link = document.createElement('a');
-        link.href = filename;
-        link.download = filename;
-        link.click();
-    }
+        function downloadFile(filename) {
+            const link = document.createElement('a');
+            link.href = filename;
+            link.download = filename;
+            link.click();
+        }
     </script>
     <script src="../../script.js"></script>
 </body>
