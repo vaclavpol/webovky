@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuPlotter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="clanky.html">Články</a></li>
+                <li><a href="info.html">O mně</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle">Přepnout motiv</button>
+    </header>
+    <main>
+        <h1>Projekt CuPlotter</h1>
+        <h2>Srtučný popis</h2>
+        <p>Dvouosý CNC stroj určený pro usnadnění výroby plošných spojů v domácích podmínkách. Na této stránce se
+            nachází návod k obsluze stroje a všechny potřebné soubory pro jeho provoz. </p>
+        <h1>Software a firmware</h1>
+        <ul>
+            <li>GRBL - <a href="https://github.com/grbl/grbl?tab=readme-ov-file">odkaz na oficiální stránku</a></li>
+            <li>Universal Gcode Sender (UGS) - <a href="https://winder.github.io/ugs_website/">odkaz na oficiální
+                    stránku</a></li>
+            <li>FlatCam - <a href="http://flatcam.org/download">odkaz na oficiální stránku &emsp;</a><a
+                href="https://drive.google.com/drive/folders/1sCBYOjP_K2XKYgDagDPQqvY4xDjRxZQf">odkaz ke stažení
+                nejnovější verze programu (na oficiální stránce z nějakého důvodu není dostupná)</a></li>
+            <li>Universal Gcode Sender (UGS) - <a href="https://winder.github.io/ugs_website/">odkaz na oficiální
+                    stránku</a></li>
+        </ul>
+        <h1>Upravené soubory</h1>
+        <ul>
+            <li>Upravený soubor <a href="#" onclick="downloadFile('config.h')">config.h</a> - nahradit originální</li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2025 Václav Polák</p>
+    </footer>
+
+    
+    <script>
+    function downloadFile(filename) {
+        const link = document.createElement('a');
+        link.href = filename;
+        link.download = filename;
+        link.click();
+    }
+    </script>
+    <script src="../../script.js"></script>
+</body>
+
+</html>
